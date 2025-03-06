@@ -30,7 +30,7 @@
         </div>
         <div class="home-text">
             <div class="home-tittle">
-                <h1>Graphic Design & Frontend Developer</h1>
+                <h1 id="text"></h1>
                 <p><b>Selamat Datang di Website Portofolio Saya</b> Kenal Saya Lebih Dekat !!!</p>
             </div>
             <div class="home-link">
@@ -70,5 +70,19 @@
             </table>
         </div>
     </div>
+    <script>
+        const text = "Graphic Design & Frontend Developer";
+        let i = 0;
+    
+        function typeWriter() {
+            if (i < text.length) {
+                document.getElementById("text").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100); // Kecepatan mengetik
+            }
+        }
+    
+        typeWriter();
+    </script>
 </body>
 </html>
