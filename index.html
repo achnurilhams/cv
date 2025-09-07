@@ -1,74 +1,291 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>achnurilhams</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio Saya</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body { background: linear-gradient(to bottom, #f0f9ff, #e0f2fe); }
+    .tech-bg {
+      background: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
+    }
+
+
+  .loader {
+    border-width: 4px;
+    border-style: solid;
+  }
+</style>
+
+  </style>
 </head>
-<body>
-    <div class="header">
-        <div class="head-logo">
-            <h3>Portofolio</h3>
-        </div>
-        <div class="head-navbar">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#">Service</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </div>
-        <div class="head">
-            <a class="icon" href="https://www.instagram.com/nur.ilhams/"><img src="instagram.png" alt=""></a>
-            <a class="icon" href="#"><img src="github-sign.png" alt=""></a>
-        </div>
-    </div>
-    <div class="home" id="home">
-        <div class="home-profil" class="wow bounceInUp">
-            <img src="profil.png" alt="foto profil">    
-        </div>
-        <div class="home-text">
-            <div class="home-tittle">
-                <h1>Graphic Design <br>& Frontend Developer</h1>
-                <p><b>Selamat Datang di Website Portofolio Saya</b> Kenal Saya Lebih Dekat !!!</p>
-            </div>
-            <div class="home-link">
-                <a href="">CV</a>
-            </div>
-        </div>
+<body class="text-gray-800 font-sans overflow-x-hidden">
+
+  <div id="splash" class="fixed inset-0 bg-blue-600 flex flex-col items-center justify-center z-50">
+  <h1 class="text-4xl font-bold text-white mb-4 animate-pulse">Welcome!</h1>
+  <div class="loader border-4 border-white border-t-transparent w-12 h-12 rounded-full animate-spin"></div>
 </div>
+
+  <!-- HEADER -->
+  <header class="fixed w-full z-50 bg-white/80 backdrop-blur-lg shadow-sm">
+    <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+      <h1 class="text-2xl font-bold text-blue-600">Achnur<span class="text-gray-700">ilhams</span></h1>
       
-    <div class="about" id="about">
-        <div class="about-tittle">
-            <h1>Tentang Saya</h1>
-            <p> Halo! Saya <b>Ach. Nur Ilham Setyawan</b>, seorang Mahasiswa Informatika dengan keahlian <b>Graphic Design & Frontend-Developer</b> yang bersemangat dalam menyajikan tampilan yang elegan & minimalis. Dengan pengalaman selama 3 tahun, saya telah membantu lingkungan saya dalam menciptakan desain yang menarik.
-                Keahlian utama saya meliputi Social Media Manager, Photography, Videography, dan saya selalu berusaha untuk memberikan solusi kreatif serta inovatif dalam setiap proyek yang saya kerjakan. Saya percaya bahwa semangat inovasi, dan itu tercermin dalam setiap karya saya.
-                Jika Anda tertarik untuk bekerja sama atau sekadar berdiskusi tentang proyek menarik, jangan ragu untuk menghubungi saya!</p>
-        </div>
-        <div class="activity">
-            <table cellpadiing="0" cellspacing="0">
-                <tr>
-                    <th>Status</th>
-                    <th>Kegiatan</th>
-                    <th>Tahun</th>
-                </tr>
-                <tr>
-                    <td>CO. PDD</td>
-                    <td>Uniba Basketball Competition 2024</td>
-                    <td>2024</td>
-                <tr>
-                    <td>Ketua Pelaksana</td>
-                    <td>Uniba Basketball Competition 2025</td>
-                    <td>2025</td>
-                </tr>
-                <tr>
-                    <td>Asisten Praktikum</td>
-                    <td>Praktikum Algoritma Pemrograman</td>
-                    <td>2025</td>
-                </tr>
-            </table>
-        </div>
+      <button id="menu-toggle" class="md:hidden text-gray-600 focus:outline-none">
+        <i class="fas fa-bars fa-lg"></i>
+      </button>
+
+      <nav class="hidden md:flex space-x-8 text-gray-600 font-medium">
+        <a href="#about" class="hover:text-blue-600 transition">Tentang</a>
+        <a href="#skills" class="hover:text-blue-600 transition">Skill</a>
+        <a href="#projects" class="hover:text-blue-600 transition">Proyek</a>
+        <a href="#contact" class="hover:text-blue-600 transition">Kontak</a>
+      </nav>
     </div>
+
+    <!-- Menu Mobile -->
+    <nav id="mobile-menu" class="md:hidden absolute top-full left-0 w-full bg-white/90 backdrop-blur-lg shadow-lg hidden">
+      <div class="flex flex-col items-start p-4 space-y-4">
+        <a href="#about" class="block w-full text-gray-700 hover:text-blue-600 py-2 border-b border-gray-200">Tentang</a>
+        <a href="#skills" class="block w-full text-gray-700 hover:text-blue-600 py-2 border-b border-gray-200">Skill</a>
+        <a href="#projects" class="block w-full text-gray-700 hover:text-blue-600 py-2 border-b border-gray-200">Proyek</a>
+        <a href="#contact" class="block w-full text-gray-700 hover:text-blue-600 py-2">Kontak</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO / PROFIL -->
+  <section class="pt-28 pb-16 px-6 md:px-12 relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-40 h-40 bg-blue-300 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+    <div class="absolute bottom-0 right-0 w-60 h-60 bg-blue-400 rounded-full blur-3xl opacity-30 animate-bounce"></div>
+    
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
+      <!-- Foto Profil -->
+      <div class="relative flex justify-center md:justify-start">
+        <div class="absolute inset-0 rounded-full bg-blue-200 animate-ping opacity-30"></div>
+        <img src="image/wwd.png" alt="Foto Profil" 
+             class="w-40 h-40 md:w-56 md:h-56 rounded-full shadow-xl border-4 border-white object-cover relative z-10 hover:scale-105 transition duration-500">
+      </div>
+
+      <!-- Teks Intro -->
+      <div class="text-center md:text-left">
+        <h2 class="text-4xl md:text-6xl font-bold text-blue-700 mb-6">
+          Halo, Saya Ach. Nur <span class="text-blue-500">Ilham Setyawan</span>
+        </h2>
+        <p class="text-lg md:text-xl max-w-2xl text-gray-600 mb-8">
+          Desainer Grafis • Programmer • UI/UX Designer  
+          Menggabungkan seni visual dengan teknologi modern.
+        </p>
+        <a href="#projects" 
+           class="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition transform hover:scale-110 duration-300 shadow-lg">
+          Lihat Proyek
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-16 px-6 md:px-12 bg-white">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <img src="image/editor.jpg" alt="About Me" class="rounded-2xl shadow-xl hover:scale-105 transition duration-500"/>
+      <div>
+        <h3 class="text-3xl font-bold text-blue-700 mb-4">Tentang Saya</h3>
+        <p class="text-gray-600 leading-relaxed">
+          Saya seorang kreator digital dengan keahlian di bidang desain grafis, pemrograman, serta desain UI/UX.
+          Mengutamakan estetika modern, pengalaman pengguna, dan teknologi mutakhir dalam setiap karya.
+        </p>
+      </div>
+    </div>
+  </section>
+
+    <!-- EXPERIENCE -->
+  <section id="experience" class="py-16 px-6 md:px-12 bg-white">
+    <h3 class="text-3xl font-bold text-center text-blue-700 mb-12">Pengalaman</h3>
+    <div class="max-w-5xl mx-auto space-y-8">
+      
+      <!-- Card 1 -->
+      <div class="p-6 bg-blue-50 rounded-2xl shadow-md hover:shadow-xl transition duration-500">
+        <h4 class="text-xl font-semibold text-blue-600">Asisten Praktikum</h4>
+        <p class="text-gray-500 text-sm mb-2">Universitas Bahaudin Mudhary • 2024 - 2025</p>
+        <p class="text-gray-600 leading-relaxed">
+          Membimbing mahasiswa dalam mata kuliah <span class="font-medium">Algoritma Pemrograman</span> 
+          dan <span class="font-medium">Struktur Data</span> menggunakan bahasa C++. 
+          Tugas meliputi membantu dosen dalam penyusunan materi praktikum, memberikan penjelasan konsep dasar pemrograman. 
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="p-6 bg-blue-50 rounded-2xl shadow-md hover:shadow-xl transition duration-500">
+        <h4 class="text-xl font-semibold text-blue-600">Ketua Pelaksana & CO. Pdd</h4>
+        <p class="text-gray-500 text-sm mb-2">Uniba Basketball Competition • 2025</p>
+        <p class="text-gray-600 leading-relaxed">
+          Menjadi penanggung jawab utama dalam penyelenggaraan turnamen basket tingkat regional se-Madura. 
+          Mengkoordinasikan panitia, menjalin kerja sama dengan sponsor, memastikan kelancaran acara, 
+          serta menciptakan atmosfer kompetisi yang sportif dan meriah dengan melibatkan berbagai tim basket dari seluruh Madura.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="p-6 bg-blue-50 rounded-2xl shadow-md hover:shadow-xl transition duration-500">
+        <h4 class="text-xl font-semibold text-blue-600">Admin Instagram</h4>
+        <p class="text-gray-500 text-sm mb-2">Instagram Uniba Basketball • 2023 - Sekarang</p>
+        <p class="text-gray-600 leading-relaxed">
+          Mengelola akun Instagram resmi Uniba Basketball, membuat konten kreatif, 
+        meningkatkan interaksi dengan pengikut, serta membangun citra positif tim. 
+        Berhasil meningkatkan jumlah followers, engagement, dan jangkauan audiens melalui strategi konten yang konsisten.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SKILLS -->
+  <section id="skills" class="py-16 px-6 md:px-12 bg-blue-50">
+    <h3 class="text-3xl font-bold text-center text-blue-700 mb-12">Keahlian</h3>
+    <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div class="p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-500">
+        <h4 class="text-xl font-semibold text-blue-600 mb-2">Desain Grafis</h4>
+        <p class="text-gray-600">Adobe Photoshop, Illustrator, Figma, Canva.</p>
+      </div>
+      <div class="p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-500">
+        <h4 class="text-xl font-semibold text-blue-600 mb-2">Pemrograman</h4>
+        <p class="text-gray-600">HTML, CSS, JavaScript, PHP, Laravel, Flutter.</p>
+      </div>
+      <div class="p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-500">
+        <h4 class="text-xl font-semibold text-blue-600 mb-2">UI/UX</h4>
+        <p class="text-gray-600">Wireframe, Prototyping, User Research.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="py-16 px-6 md:px-12 bg-white">
+    <h3 class="text-3xl font-bold text-center text-blue-700 mb-12">Proyek</h3>
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+      <div class="rounded-2xl overflow-hidden shadow-lg group relative">
+        <img src="image/ww.jpg" alt="Proyek" class="w-full h-56 object-cover group-hover:scale-110 transition duration-500"/>
+        <div class="absolute inset-0 bg-blue-700/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+          <span class="text-white font-bold">Aplikasi Mobile</span>
+        </div>
+      </div>
+      <div class="rounded-2xl overflow-hidden shadow-lg group relative">
+        <img src="image/ww.jpg" alt="Proyek" class="w-full h-56 object-cover group-hover:scale-110 transition duration-500"/>
+        <div class="absolute inset-0 bg-blue-700/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+          <span class="text-white font-bold">Website</span>
+        </div>
+      </div>
+      <div class="rounded-2xl overflow-hidden shadow-lg group relative">
+        <img src="image/ww.jpg" alt="Proyek" class="w-full h-56 object-cover group-hover:scale-110 transition duration-500"/>
+        <div class="absolute inset-0 bg-blue-700/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+          <span class="text-white font-bold">UI/UX Design</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-16 px-6 md:px-12 bg-blue-50">
+  <h3 class="text-3xl font-bold text-center text-blue-700 mb-12">Kontak Saya</h3>
+  <div class="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-lg">
+
+    <div id="alert-box" class="hidden mb-4 p-4 rounded-lg text-white font-medium"></div>
+
+    <form id="contact-form" class="space-y-6">
+  <input type="text" name="from_name" placeholder="Nama" required 
+         class="w-full p-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+  <input type="email" name="from_email" placeholder="Email" required 
+         class="w-full p-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+  <textarea name="message" placeholder="Pesan" rows="4" required 
+            class="w-full p-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+  <button id="submit-btn" type="submit" 
+              class="w-full flex justify-center items-center gap-2 bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition transform hover:scale-105 duration-300 shadow-md">
+        <span id="btn-text">Kirim Pesan</span>
+        <span id="btn-spinner" class="hidden animate-spin border-2 border-white border-t-transparent rounded-full w-5 h-5"></span>
+      </button>
+</form>
+  </div>
+</section>
+
+
+
+
+  <!-- FOOTER -->
+  <footer class="bg-blue-700 text-white text-center p-6 mt-16">
+    <p>&copy; 2025 Nuril. Semua Hak Dilindungi.</p>
+  </footer>
+
+  <script>
+    // Fungsionalitas Menu Mobile
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Sembunyikan menu saat link diklik
+    const navLinks = mobileMenu.querySelectorAll('a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+
+
+  
+  </script>
+
+<!-- Library EmailJS -->
+<!-- Library EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("onEsQWSWIc75wtnBX"); // Public Key
+  })();
+
+  const form = document.getElementById("contact-form");
+  const alertBox = document.getElementById("alert-box");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm("service_283o13r", "template_e1w9yhr", this)
+      .then(() => {
+        showAlert("✅ Pesan berhasil dikirim!", "bg-green-500");
+        form.reset();
+      }, (err) => {
+        showAlert("⚠️ Gagal mengirim pesan, coba lagi.", "bg-red-500");
+      });
+  });
+
+  function showAlert(message, color) {
+    alertBox.textContent = message;
+    alertBox.className = `mb-4 p-4 rounded-lg text-white font-medium ${color}`;
+    alertBox.classList.remove("hidden");
+
+    // sembunyikan otomatis setelah 4 detik
+    setTimeout(() => {
+      alertBox.classList.add("hidden");
+    }, 4000);
+  }
+</script>
+
+<script>
+  window.addEventListener("load", () => {
+    const splash = document.getElementById("splash");
+    setTimeout(() => {
+      splash.classList.add("opacity-0", "transition", "duration-1000");
+      setTimeout(() => splash.style.display = "none", 1000); 
+    }, 2000); // tampil 2 detik
+  });
+</script>
+
+
+
+
 </body>
 </html>
